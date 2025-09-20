@@ -47,7 +47,7 @@ export default function CookieBanner() {
     h(
       "span",
       { style: { lineHeight: 1.4 } },
-      "Używamy localStorage/cookies niezbędnych do działania (np. zapis koszyka). Nie stosujemy śledzących ciasteczek."
+      "Używam localStorage/cookies niezbędnych do działania. Nie stosuje śledzących ciasteczek."
     ),
     h(
       "div",
