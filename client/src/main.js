@@ -9,6 +9,7 @@ import Home from "./pages/Home.js";
 import Product from "./pages/Product.js";
 import Cart from "./pages/Cart.js";
 import Checkout from "./pages/Checkout.js";
+import AdminNew from "./pages/AdminNew.js";
 
 const h = React.createElement;
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "product/:id", element: h(Product, null) },
       { path: "cart", element: h(Cart, null) },
       { path: "checkout", element: h(Checkout, null) },
+      { path: "admin/new", element: h(AdminNew, null) },
     ],
   },
 ]);
