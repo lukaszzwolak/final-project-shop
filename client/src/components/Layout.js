@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import CookieBanner from "./CookieBanner.js";
 
 const h = React.createElement;
 
@@ -35,6 +36,7 @@ export default function Layout() {
       "main",
       { style: { padding: 24, maxWidth: 960, margin: "0 auto" } },
       h(Outlet, null)
-    )
+    ),
+    h(CookieBanner, null)
   );
 }
