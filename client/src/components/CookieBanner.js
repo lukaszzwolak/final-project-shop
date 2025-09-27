@@ -27,6 +27,7 @@ export default function CookieBanner() {
     {
       role: "dialog",
       "aria-live": "polite",
+      "aria-label": "Informacja o cookies",
       style: {
         position: "fixed",
         left: 16,
@@ -47,7 +48,7 @@ export default function CookieBanner() {
     h(
       "span",
       { style: { lineHeight: 1.4 } },
-      "Używam localStorage/cookies niezbędnych do działania. Nie stosuje śledzących ciasteczek."
+      "Używamy localStorage/cookies niezbędnych do działania sklepu. Nie stosujemy śledzących ciasteczek."
     ),
     h(
       "div",
@@ -55,6 +56,7 @@ export default function CookieBanner() {
       h(
         "button",
         {
+          type: "button",
           onClick: onAccept,
           style: {
             background: "#fff",
