@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@nestjs/config": "^4.0.2",
+    "@prisma/client": "^6.16.2",
     "ansi-regex": "^5.0.1",
     "ansi-styles": "^4.3.0",
     "chalk": "^4.1.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
     "cliui": "^8.0.1",
     "color-convert": "^2.0.1",
     "color-name": "^1.1.4",
@@ -35,12 +39,15 @@
   },
   "devDependencies": {
     "concurrently": "^9.0.0",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "prisma": "^6.16.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   },
   "scripts": {
-    "dev": "concurrently -k \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
-    "build": "npm run build --prefix client",
-    "start": "npm run start --prefix server"
+    "dev": "concurrently -k \"npm run start:dev --prefix api\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client && npm run build --prefix api",
+    "start": "npm run start:prod --prefix api"
   },
   "keywords": [],
   "author": "",

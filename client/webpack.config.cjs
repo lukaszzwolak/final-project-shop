@@ -1,3 +1,4 @@
+const Dotenv = require("dotenv-webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -18,7 +19,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [["@babel/preset-env", { targets: "defaults" }]],
+            presets: [
+              ["@babel/preset-env", { targets: "defaults" }],
+              "@babel/preset-react",
+            ],
           },
         },
       },
@@ -30,5 +34,8 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new Dotenv({ path: "./.env" }),
+  ],
 };

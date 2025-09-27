@@ -12,9 +12,13 @@ export function loadCart() {
   return undefined;
 }
 
+let t;
 export function saveCart(state) {
   try {
+    clearTimeout(t);
     const data = { items: state.cart?.items ?? [] };
-    localStorage.setItem(KEY, JSON.stringify(data));
+    t = setTimeout(() => {
+      localStorage.setItem(KEY, JSON.stringify(data));
+    }, 150);
   } catch {}
 }
