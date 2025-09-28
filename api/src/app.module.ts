@@ -22,7 +22,7 @@ class HealthController {
 
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', 'client', 'dist'),
-      exclude: ['/api*'],
+      exclude: ['/api(.*)'],
     }),
 
     PrismaModule,
