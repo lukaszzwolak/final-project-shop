@@ -1,0 +1,127 @@
+# 🛒 Final Project Shop — Dokumentacja użytkownika
+
+## 🎯 Cel projektu
+**Final Project Shop** to pełnoprawna aplikacja typu **e-commerce**, stworzona jako projekt końcowy kursu programowania.  
+Aplikacja umożliwia użytkownikom:
+- przeglądanie listy produktów,  
+- dodawanie ich do koszyka,  
+- składanie zamówień z danymi kontaktowymi,  
+- podgląd szczegółów produktu,  
+- automatyczne zapisywanie zamówień w bazie danych.  
+
+Projekt został zbudowany w architekturze **Fullstack (React + NestJS + PostgreSQL)** i posiada w pełni responsywny interfejs użytkownika.
+
+---
+
+## 🚀 Jak uruchomić projekt lokalnie
+
+### 🔧 Wymagania systemowe
+Aby uruchomić projekt lokalnie, potrzebne są:
+- **Node.js** w wersji 20 lub wyższej,  
+- **npm** (instalowany z Node.js),  
+- **PostgreSQL** (lokalna baza danych),  
+- **Git** do klonowania repozytorium.  
+
+---
+
+### 1️⃣ Klonowanie repozytorium
+Pobierz projekt z GitHuba:
+```bash
+git clone https://github.com/lukaszzwolak/final-project-shop.git
+cd final-project-shop
+2️⃣ Backend (API — NestJS + Prisma)
+Przejdź do katalogu:
+
+bash
+Skopiuj kod
+cd api
+npm ci
+Utwórz plik .env w katalogu api:
+
+env
+Skopiuj kod
+DATABASE_URL=postgresql://final_shop_user:MEDIVALTOTALwar2@localhost:5432/final_shop
+PORT=4000
+CLIENT_URL=http://localhost:5173
+NODE_ENV=development
+Zainicjuj bazę danych i uruchom serwer:
+
+bash
+Skopiuj kod
+npm run prisma:generate
+npm run prisma:push
+npm run prisma:seed
+npm run start:dev
+Po uruchomieniu backend będzie dostępny pod adresem:
+👉 http://localhost:4000/api
+
+3️⃣ Frontend (React + Vite)
+Przejdź do katalogu klienta:
+
+bash
+Skopiuj kod
+cd ../client
+npm ci
+Utwórz plik .env w katalogu client:
+
+env
+Skopiuj kod
+VITE_API_URL=http://localhost:4000/api
+Uruchom aplikację:
+
+bash
+Skopiuj kod
+npm run dev
+Frontend uruchomi się pod adresem:
+👉 http://localhost:5173
+
+⚙️ Dodatkowe informacje techniczne
+Backend: NestJS + Prisma ORM
+
+Frontend: React (Vite)
+
+Baza danych: PostgreSQL
+
+Serwer HTTP: Nginx (reverse proxy + statyczny frontend)
+
+Procesy produkcyjne: PM2
+
+Health check API:
+
+bash
+Skopiuj kod
+curl http://localhost:4000/api/health
+Inicjalizacja danych:
+Dane produktów są generowane przez skrypt:
+
+bash
+Skopiuj kod
+npm run prisma:seed
+🌐 Wersja produkcyjna (Hetzner Cloud)
+Projekt został wdrożony na Hetzner Cloud (Ubuntu 24.04).
+Konfiguracja obejmuje:
+
+Nginx (proxy + frontend),
+
+PM2 (zarządzanie backendem),
+
+PostgreSQL (lokalna baza danych).
+
+Działający adres serwera:
+👉 http://188.245.218.146
+
+🧩 Technologie użyte w projekcie
+Warstwa	Technologia
+Frontend	React + Vite
+Backend	NestJS
+Baza danych	PostgreSQL
+ORM	Prisma
+Serwer HTTP	Nginx
+Menedżer procesów	PM2
+System	Ubuntu 24.04 LTS
+
+💬 Autor
+Łukasz Zwolak
+Projekt wykonany jako część kursu Kodilla — Fullstack Developer.
+
+© 2025 Final Project Shop. All rights reserved.
