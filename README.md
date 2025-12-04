@@ -33,7 +33,7 @@ cd api
 npm ci
 
 Environment variables (api/.env)
-DATABASE_URL=postgresql://final_shop_user:MEDIVALTOTALwar2@localhost:5432/final_shop
+DATABASE_URL=postgresql://final_shop_user:MED***@localhost:5432/final_shop
 PORT=4000
 CLIENT_URL=http://188.245.218.146
 NODE_ENV=production
@@ -170,3 +170,4 @@ systemctl reload nginx
 Łukasz Zwolak
 Fullstack Developer — NestJS / React / PostgreSQL
 GitHub: lukaszzwolak
+
